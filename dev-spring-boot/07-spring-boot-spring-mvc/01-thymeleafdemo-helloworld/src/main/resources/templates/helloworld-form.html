@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+  <title>Hello World - Input Form</title>
+</head>
+<body>
+  <form th:action="@{/processFormVersionTwo}" method="GET">
+    <input type="text" name="studentName" placeholder="What's your name?" />
+    <button type="submit"/>送信</button>
+  </form>
+</body>
+</html>
