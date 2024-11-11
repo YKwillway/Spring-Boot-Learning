@@ -3,8 +3,7 @@ package com.luv2code.springboot.thymeleafdemo.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class HelloWorldController {
@@ -27,7 +26,7 @@ public class HelloWorldController {
         return "helloworld";
     }
 
-    @RequestMapping("/processFormVersionThree")
+    @PostMapping("/processFormVersionThree")
     public String processFormVersionThree(@RequestParam("studentName") String theName, Model model) {
         String result = "Hey! My Friend from v3! " + theName;
         model.addAttribute("message", result);
