@@ -12,15 +12,18 @@ import java.util.List;
 
 @Controller
 public class StudentController {
-    // アノテーション
+    // @Value: application.propertiesの定義値とバインディングしている
     @Value("${countries}")
     private List<String> countries;
+    @Value("${languages}")
+    private List<String> languages;
 
     @GetMapping("/showStudentForm")
     public String showForm(Model theModel) {
         Student theStudent = new Student();
         theModel.addAttribute("student", theStudent);
         theModel.addAttribute("countries", countries);
+        theModel.addAttribute("languages", languages);
         return "student-form";
     }
 

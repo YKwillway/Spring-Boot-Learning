@@ -17,6 +17,12 @@ Country:
 <select th:field="*{country}">
     <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}" />
 </select>
+
+<br><br>
+Favorite Programming Language:
+<br><br>
+<input type="radio" th:each="language: ${languages}" th:field="*{favoriteLanguage}" th:value="${language}" th:text="${language}">
+<br><br>
 <input type="submit" value="Submit"　/>
 </form>
 </body>
