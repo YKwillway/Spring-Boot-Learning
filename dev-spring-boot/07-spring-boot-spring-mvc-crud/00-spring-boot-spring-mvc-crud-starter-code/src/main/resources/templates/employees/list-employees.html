@@ -10,12 +10,14 @@
 <div class="container">
   <h3>Employee Directory</h3>
   <hr>
+  <a class="btn btn-primary btn-sm mb-3" th:href="@{/employees/showFormForAdd}">Add Employee</a>
   <table class="table table-bordered table-striped">
     <thead class="table-dark">
       <tr>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +25,9 @@
         <td th:text="${tempEmployee.firstName}"></td>
         <td th:text="${tempEmployee.lastName}"></td>
         <td th:text="${tempEmployee.email}"></td>
+        <!-- リクエストパラメータを(パラメータ名=値)で設定する-->
+        <!-- リンク先は@{リンク}で設定する -->
+        <td><a th:href="@{/employees/showFormForUpdate(employeeId=${tempEmployee.id})}" class="btn btn-primary btn-sm">Update</a></td>
       </tr>
     </tbody>
   </table>
